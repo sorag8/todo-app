@@ -12,8 +12,8 @@ const state = {
         new Todo('Gema de la mente'),
         new Todo('Gema de la realidad'),
         new Todo('Gema del poder'),
-        new Todo('Gema del tiempo'),
-        new Todo('Gema del alma'),
+        // new Todo('Gema del tiempo'),
+        // new Todo('Gema del alma'),
     ],
     filter: Filters.All,
 }

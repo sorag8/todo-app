@@ -31,6 +31,7 @@ export const App = ( elementId ) => {
 
     // Referencias HTML
     const newDescriptionInput = document.querySelector(ElementsIDs.NewTodoInput);
+    const todoListUL = document.querySelector(ElementsIDs.TodoList);
 
 
     // Listeners
@@ -43,6 +44,13 @@ export const App = ( elementId ) => {
         todoStore.addTodo( event.target.value.trim() );
         displayTodos();
         event.target.value = '';
+    });
+
+    todoListUL.addEventListener('click', (event) => {
+        const element = event.target.closest('[data-id]');
+        // console.log(element.getAttribute('data-id'));
+        todoStore.toggleTodo(element.getAttribute('data-id'));
+        displayTodos();
     });
 
 }
