@@ -50,6 +50,11 @@ const getTodos = ( filter = Filters.All ) => {
  */
 const addTodo = ( description ) => {
     if( !description )throw new Error('Description is required');
+    
+    state.todos.forEach(todo => {
+        if( todo.description === description ) throw new Error (`Todo ${ description } already exist`);
+    });
+
     state.todos.push( new Todo(description) );
 }
 
